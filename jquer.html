@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        body {
+            overflow: hidden;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .box {
+            width: 75%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .god {
+            position: relative;
+            width: 460px;
+            left: 10px;
+            /* z-index: 3; */
+        }
+
+        .chakra {
+            /* z-index: 3; */
+            width: 450px;
+            position: absolute;
+            left: 10px;
+            animation: chakra linear 10s infinite;
+
+        }
+
+        @keyframes chakra {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .agarbati {
+            width: 240px;
+            position: absolute;
+            bottom: 140px;
+            right: 1000px;
+            z-index: 2;
+            animation: none;
+        }
+
+        .agarbatiactive {
+            animation: alternate agarbati 8s linear 4;
+        }
+
+        @keyframes agarbati {
+            0% {
+                transform: rotate(0deg) translateX(-100px) rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg) translateX(100px) rotate(360deg);
+            }
+        }
+
+        .aarti {
+            width: 240px;
+            position: absolute;
+            bottom: 80px;
+            right: 1000px;
+            z-index: 2;
+            animation: none;
+        }
+
+        .aartiactive {
+            animation: alternate aarti 8s linear 4;
+        }
+
+        @keyframes aarti {
+            0% {
+                transform: none;
+            }
+
+            10% {
+                transform: rotate(0deg) translateX(100px) rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg) translateX(100px) rotate(360deg);
+            }
+        }
+
+        .flower {
+            position: absolute;
+            width: 580px;
+            left: 0px;
+            top: -1060px;
+            animation: none;
+            z-index: 2;
+        }
+
+        .floweractive {
+            animation: alternate flower 5s linear;
+
+        }
+
+        @keyframes flower {
+            0% {
+                top: -1060px;
+            }
+
+            70% {
+                top: 830px;
+            }
+
+            71% {
+                visibility: hidden;
+            }
+
+            100% {
+                visibility: hidden;
+                top: -1060px;
+            }
+
+        }
+
+        .crowd {
+            z-index: 2;
+            position: absolute;
+            width: 50%;
+            height: 45vw;
+            top: 200px;
+        }
+
+        .btns {
+            position: absolute;
+            right: 70px;
+            top: 50px;
+        }
+
+        .temple1,
+        .temple2,
+        .temple3 {
+            position: absolute;
+            width: 100%;
+            /* opacity: .7; */
+        }
+    </style>
+</head>
+
+<body>
+    <img class="temple1" src="./images/temple1.png" alt="">
+    <img class="temple2" src="./images/temple2.png" alt="">
+    <img class="temple3" src="./images/temple3.png" alt="">
+    <div class="box col-6">
+        <img class="aarti" src="./images/aarti.png" alt="">
+        <img class="agarbati" src="./images/agarbati.png" alt="">
+        <img class="crowd" src="./images/crowd.png" alt="">
+        <img class="flower" src="./images/flower.png" alt="">
+        <img class="chakra" src="./images/chakra.png" alt="">
+        <img class="god" src="./images/ganesh.png" alt="">
+    </div>
+    <div class="col-6 btns">
+        <button class=" btn btn1 btn-warning m-3">
+            Flower
+        </button>
+        <button class=" btn btn2 btn-dark m-3">
+            agarbati
+        </button>
+        <button class=" btn btn3 btn-danger m-3">
+            aarti
+        </button>
+
+    </div>
+
+
+    <div class="p" style="color: red; display: flex;align-items: end; z-index: 1; position: relative;">
+        halleo
+    </div>
+
+    <script>
+        // $(".text").click(function () {
+        //     $(this).css("background-color", "orange");
+        // });
+
+
+        $("#text2").css("color", "blue");
+        $("#name").moux(function () {
+            alert("hello")
+        })
+        $(".btn1").click(function () {
+            $(".flower").toggleClass("floweractive");
+        });
+
+        $(".btn2").click(function () {
+            $(".agarbati").toggleClass("agarbatiactive");
+        });
+        $(".btn3").click(function () {
+            $(".aarti").toggleClass("aartiactive");
+        });
+        // $(".btn3").on("keydown",function (e) {
+        //     $(".aarti").toggleClass("aartiactive");
+        // });
+
+        // $(document).ready(function () {
+        //     $("p").bind("click", function () {
+        //         alert("This paragraph was clicked.");
+        //     });
+        // });  
+
+        $(document).on("keydown",function (e) {
+            alert(e.key);
+        });
+
+        // alert("helllo");
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
